@@ -17,7 +17,7 @@
 >> - Enable bin-log setting on AWS RDS: Set the value of binlog_format to **ROW**
 >> - Create user and grant privilege of SELECT, REPLICATION SLAVE, REPLICATION CLIENT to this user  
 
-	```SQL
+	```
 	
 	# CREATE USER canal2 IDENTIFIED WITH mysql_native_password BY 'JCH#1357';  
 	# GRANT SELECT, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'canal2'@'%';
@@ -30,7 +30,7 @@
 >> - Download [canal 1.1.7](https://github.com/alibaba/canal) from github 
 >> - ${Canal_Home_Path}/conf/example/instance.properties
 
-	```YMAL
+	```
 	# position info
 	canal.instance.master.address=${RDS URL}
 	...
