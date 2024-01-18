@@ -47,10 +47,10 @@
 	canal.destinations = dev,staging
 	...
 	```
->> Create a new folder under conf/, for example: dev. And refer to step2 to create a new subscribe instance
+>> - Create a new folder under conf/, for example: dev. And refer to step2 to create a new subscribe instance
 
 
->> - ${Canal_Home_Path}/bin  
+> 4. ${Canal_Home_Path}/bin  
 Double click **startup.bat**
 
 > 3. Project Setting  
