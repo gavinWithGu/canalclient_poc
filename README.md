@@ -53,7 +53,7 @@
 > 4. ${Canal_Home_Path}/bin  
 Double click **startup.bat**
 
-> 3. Project Setting  
+> 5. Project Setting  
 
 >> - ${Canal_Home_Path}/src/main/resources/application-dev.yml  
 
