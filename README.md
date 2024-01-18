@@ -17,7 +17,7 @@
 >> - Enable bin-log setting on AWS RDS: Set the value of binlog_format to **ROW**
 >> - Create user and grant privilege of SELECT, REPLICATION SLAVE, REPLICATION CLIENT to this user  
 
-	```
+	```SQL
 	
 	# CREATE USER canal2 IDENTIFIED WITH mysql_native_password BY 'JCH#1357';  
 	# GRANT SELECT, REPLICATION SLAVE, REPLICATION CLIENT ON *.* TO 'canal2'@'%';
@@ -26,11 +26,11 @@
 	```
 >> - Run **init.sql** script under the folder sql
 
-> 2. Canal Client Setting
+> 2. Canal Server Setting
 >> - Download [canal 1.1.7](https://github.com/alibaba/canal) from github 
 >> - ${Canal_Home_Path}/conf/example/instance.properties
 
-	```
+	```YMAL
 	# position info
 	canal.instance.master.address=${RDS URL}
 	...
@@ -38,6 +38,17 @@
 	canal.instance.dbUsername=canal2
 	canal.instance.dbPassword=JCH#1357
 	```
+
+> 3. Canal Server Setting: to support multiple datasource
+>> - ${Canal_Home_Path}/conf/canal.properties
+
+	```YMAL
+	# position info
+	canal.destinations = dev,staging
+	...
+	```
+>> Create a new folder under conf/, for example: dev. And refer to step2 to create a new subscribe instance
+
 
 >> - ${Canal_Home_Path}/bin  
 Double click **startup.bat**
